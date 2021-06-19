@@ -1,0 +1,12 @@
+{
+  "name": "marias",
+  "displayName": "marias",
+  "expo": {
+    "name": "marias",
+    "slug": "marias",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
