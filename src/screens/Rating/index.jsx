@@ -7,6 +7,9 @@ import { useNavigation } from '@react-navigation/native';
 
 import { InputForm } from '../../components/InputForm'
 import { Button } from '../../components/Button'
+import { useTheme } from 'styled-components';
+
+import { ActivityIndicator, ImageBackground, StyleSheet } from 'react-native';
 
 import {
     Container,
@@ -25,6 +28,8 @@ const schema = Yup.object().shape({
 
 
 export function Rating(){
+    const theme = useTheme();
+    
     const navigation = useNavigation();
     const { 
         reset,
@@ -44,6 +49,10 @@ export function Rating(){
 
     return(
         <Container>
+          <ImageBackground
+            source={require('../../assets/background.png')}
+            style={styles.container}
+            >
             <Header>
                 <Title>Como foi a sua viagem?</Title>
             </Header>
@@ -51,7 +60,7 @@ export function Rating(){
                 <Photo 
                 source={{ uri: 'https://avatars.githubusercontent.com/u/67087362?v=4' }}
                 />
-                <Name>Renata Santos de Souza</Name>
+                <Name>Dunia Ghazzaoui</Name>
             </Content>
 
             <Form>
@@ -65,8 +74,21 @@ export function Rating(){
                     error={errors.name && errors.name.message}
                     />
                 </Fields>
-        <Button title="Enviar" onPress={handleSubmit(handleSendRating)}/>            
+                
+                <Button
+                  colorButton={theme.colors.primary}
+                  colorButtonText={theme.colors.shape}
+                  title="Enviar" 
+                  onPress={handleSubmit(handleSendRating)}/>            
             </Form>
+          </ImageBackground>
         </Container>
     )
 }
+
+const styles = StyleSheet.create({
+    container: {
+        resizeMode: 'cover',
+        flex: 1
+    }
+})

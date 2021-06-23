@@ -7,7 +7,7 @@ export const Container = styled.View`
     flex: 1;
 `;
 export const Header = styled.View`
-    background-color: ${(({theme}) => theme.colors.primary)};
+    /* background-color: ${({theme}) => theme.colors.primary}; */
     width: 100%;
     height: ${RFValue(113)}px;
 
@@ -33,7 +33,7 @@ export const Photo = styled.Image`
 `
 
 export const Name = styled.Text`
-    color: ${({theme}) => theme.colors.primary};
+    color: ${({theme}) => theme.colors.shape};
     font-family: ${(({theme}) => theme.fonts.regular)};
     font-size: ${RFValue(18)}px;
 `

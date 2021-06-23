@@ -1,9 +1,9 @@
 import React from 'react';
 import { useNavigation } from '@react-navigation/native'
 import {
-    Container,
-    Header,   
-    Title
+  Container,
+  Header,   
+  Title
 } from './styles'
 import { BoxChoice } from '../../components/BoxChoice';
 import { ActivityIndicator, ImageBackground, StyleSheet } from 'react-native';
