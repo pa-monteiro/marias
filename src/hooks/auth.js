@@ -32,9 +32,9 @@ function AuthProvider({children}){
                 }
                 setUser(userLogged);
 
-                const response = await api.post('users', {
-                    userLogged
-                });
+                // const response = await api.post('users', {
+                //     userLogged
+                // });
 
                 await AsyncStorage.setItem(userStorageKey, JSON.stringify(userLogged))
             }
